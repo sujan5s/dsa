@@ -11,9 +11,10 @@ int main(){
 }
 
 int revPrint(int n,int i){
-    if(n>=i){
-        cout<<n<<endl;
-        revPrint(n-1,i);
+    if(n<i){
+        return 0;
     }
-    return 0;
+    cout<<n<<endl;
+    revPrint(n-1,i);
+    
 }
