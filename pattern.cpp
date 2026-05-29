@@ -169,6 +169,6 @@ int main(){
     int n;
     cout<<"Enter the no. of lines"<<endl;
     cin>>n;
-    patern4(n);
+    patern2(n);
     return 0;
 }
