@@ -15,16 +15,23 @@ class Node{
         }
 };
 
-void preOrder(Node* root){
+void bfs(Node* root){
     if(root==NULL){
         return;
     }
-    cout<<root->data<<" ";
-    preOrder(root->left);
-    preOrder(root->right);
-}
-void postOrder(Node* root){
-    
+    queue<Node*> q;
+    q.push(root);
+    while(!q.empty()){
+        Node* temp = q.front();
+        q.pop();
+        cout<<temp->data<<" ";
+        if(temp->left){
+            q.push(temp->left);
+        }
+        if(temp->right){
+            q.push(temp->right);
+        }
+    }
 }
 int main(){
     Node* root = new Node(1);
@@ -32,5 +39,5 @@ int main(){
     root->right = new Node(3);
     root->left->left = new Node(4);
     root->left->right = new Node(5);
-    preOrder(root); 
+    bfs(root); 
 }
