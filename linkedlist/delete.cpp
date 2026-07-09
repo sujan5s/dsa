@@ -40,7 +40,7 @@ int main(){
     Node* y = new Node(arr[0],nullptr);
     Node* head = arrToLL(arr);
     
-    Delete(head);
+    head=Delete(head);
     Node* temp = head;
     while(temp){
         cout<<temp->data<<" ";
