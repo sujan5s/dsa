@@ -34,4 +34,9 @@ int main(){
     cout<<y->data;
     Node* head = arrToLL(arr);
     cout<<head->data;
+    Node* temp = head;
+    while(temp){
+        cout<<temp->data<<" ";
+        temp = temp->next;
+    }
 }
