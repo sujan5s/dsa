@@ -35,12 +35,25 @@ Node* Delete (Node* head){
     return  head;
 }
 
+Node* deleteTail(Node* head){
+    if(head == NULL || head->next==NULL){
+        return NULL;
+    }
+    Node* temp = head;
+    while(temp->next->next != NULL){
+        temp = temp->next;
+    }
+    delete temp->next;
+    temp->next = nullptr;
+}
+
 int main(){
     vector<int> arr = {2,5,8,7};
     Node* y = new Node(arr[0],nullptr);
     Node* head = arrToLL(arr);
     
-    head=Delete(head);
+    //head=Delete(head);
+    deleteTail(head);
     Node* temp = head;
     while(temp){
         cout<<temp->data<<" ";
