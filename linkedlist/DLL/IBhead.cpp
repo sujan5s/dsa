@@ -38,10 +38,17 @@ Node* IBH(Node* head,int val){
     return head;
 }
 
+Node* IAH(Node* head, int val){
+    Node* temp = new Node(val,head->next,head);
+    head->next->back=temp;
+    head->next=temp;
+    return head;
+}
+
 int main(){
     vector<int> arr = {2,5,8,7};
     Node* head = convertArrToDll(arr);
-    head=IBH(head,9);
+    head=IAH(head,9);
     Node* temp=head;
     while(temp!=NULL){
         cout<<temp->data<<" ";
